@@ -101,22 +101,37 @@
 
 //Console.WriteLine(19370%10);
 
-bool IsPalindrome(int num)
+//bool IsPalindrome(int num)
+//{
+//    int temp = num;
+//    int reverseNum = 0;
+//    while (temp != 0)
+//    {
+//        int n = temp % 10;
+//        reverseNum = reverseNum * 10 + n;
+//        temp = temp / 10;
+//    }
+//    if (num != reverseNum)
+//    {
+//        return false;
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(IsPalindrome(321));
+
+bool IsPrime(int num)
 {
-    int temp = num;
-    int reverseNum = 0;
-    while (temp != 0)
+    int i = 2;
+    while (i<num)
     {
-        int n = temp % 10;
-        reverseNum = reverseNum * 10 + n;
-        temp = temp / 10;
-    }
-    if (num != reverseNum)
-    {
-        return false;
+        if (num % i == 0)
+        {
+            return false;
+        }
+        i++;
     }
     return true;
 }
 
-Console.WriteLine(IsPalindrome(321));
-
+Console.WriteLine(IsPrime(13));
