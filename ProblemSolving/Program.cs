@@ -184,3 +184,121 @@
 //    int cnt = CountDigits(num);
 
 //}
+
+//printing name five times using recursion
+
+//void PrintNamesFiveTimes(int i,int n)
+//{
+//    if (i == n)
+//    {
+//        return;
+//    }
+//    Console.WriteLine("Usama Ashraf");
+//    PrintNamesFiveTimes(i + 1, n);
+
+//}
+
+//PrintNamesFiveTimes(0, 4);
+
+//Print linearly from 1 to N
+
+//void PrintNumbersLinearlyToN(int i,int n)
+//{
+//    if (i > n)
+//    {
+//        return;
+//    }
+//    Console.WriteLine(i);
+//    PrintNumbersLinearlyToN(i+1,n);
+//}
+
+//PrintNumbersLinearlyToN(1, 10);
+
+//print numbers from N to 1
+
+//void PrintNumbersFromN(int i,int n)
+//{
+//    if (i > n)
+//    {
+//        return;
+//    }
+//    Console.WriteLine(n);
+//    PrintNumbersFromN(i, n-1);
+
+//}
+//PrintNumbersFromN(1, 10);
+
+//Print linearly from 1 to N using backtracking
+
+//void PrintNumberLinearly(int i,int n)
+//{
+//    if (i < 1)
+//    {
+//        return;
+//    }
+//    PrintNumberLinearly(i-1, n);
+//    Console.WriteLine(i);
+//}
+
+//PrintNumberLinearly(3, 3);
+
+//Print numbers from N to 1 using backtracking
+
+//void PrintNumbersFromN(int i,int n)
+//{
+//    if (i > n)
+//    {
+//        return;
+//    }
+//    PrintNumbersFromN(i + 1, n);
+//    Console.WriteLine(i);
+//}
+
+//PrintNumbersFromN(1, 3);
+
+//Sum of first N number
+//void SumOfFirstNNumbers(int i,int sum)
+//{
+//    if (i <1)
+//    {
+//        Console.WriteLine(sum);
+//        return;
+//    }
+//    SumOfFirstNNumbers(i-1,sum+i);
+
+//}
+//SumOfFirstNNumbers(10,0);
+
+//factorial of N numbers
+
+//void FactorialNumber(int fact,int n)
+//{
+//    if (n < 1)
+//    {
+//        Console.WriteLine(fact);
+//        return;
+//    }
+//    FactorialNumber(fact*n,n-1);
+//}
+//FactorialNumber(1, 5);
+
+//Reverse an Array
+
+void ReverseArray(int[] arr, int n)
+{
+    int i = 0;
+    int j = arr.Length - 1;
+    if (i == j)
+    {
+        Console.WriteLine(arr);
+        return;
+    }
+    int newArr = arr[i];
+    arr[i] = arr[j];
+    arr[j] = newArr;
+    i++;
+    j--;
+    ReverseArray(arr, n);
+}
+
+ReverseArray([4, 2, 5], 3);
