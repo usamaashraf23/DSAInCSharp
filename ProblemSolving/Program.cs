@@ -284,21 +284,205 @@
 
 //Reverse an Array
 
-void ReverseArray(int[] arr, int n)
-{
-    int i = 0;
-    int j = arr.Length - 1;
-    if (i == j)
-    {
-        Console.WriteLine(arr);
-        return;
-    }
-    int newArr = arr[i];
-    arr[i] = arr[j];
-    arr[j] = newArr;
-    i++;
-    j--;
-    ReverseArray(arr, n);
-}
+//void ReverseArray(int i,int[] arr, int n)
+//{
+//    int j = n - i - 1;
+//    if (i >= n-i-1)
+//    {
+//        foreach(int item in arr)
+//        {
+//            if (Array.IndexOf(arr, item) < arr.Length-1)
+//            {
+//                Console.Write($"{item},");
+//            }
+//            else
+//            {
+//                Console.Write($"{item}");
+//            }
 
-ReverseArray([4, 2, 5], 3);
+//        }
+//        return;
+//    }
+//    int newArr = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = newArr;
+
+//    ReverseArray(i+1,arr, n);
+//}
+
+//ReverseArray(0,[1,2,3,4,5], 5);
+
+//Check if string is palindrome
+
+//void IsPalindrome(int i,string str)
+//{
+//    int j = str.Length - i - 1;
+
+//    if (str[i] != str[j])
+//    {
+//        Console.WriteLine("String is not Palindrome");
+//        return;
+//    }
+
+//    if (i >= j)
+//    {
+//        Console.WriteLine("String is Palindrome");
+//        return;
+//    }
+
+
+
+//    IsPalindrome(i+1, str);
+//}
+
+//IsPalindrome(0,"aabbdcccdbbaa");
+
+//Print Fabionacci up to Nth Term
+
+//void PrintFabionacciUptoNthTerm(int n)
+//{
+//    int n1 = 0;
+//    int n2 = 1;
+//    int nextNum;
+//    Console.Write(n1 + "," + n2+",");
+//    for(int i = 1; i < n; i++)
+//    {
+//        nextNum = n1 + n2;
+//        Console.Write(i < n - 1 ? nextNum+"," : nextNum);
+//        int temp = n1;
+//        n1 = n2;
+//        n2= nextNum;
+//    }
+//}
+//PrintFabionacciUptoNthTerm(5);
+
+//int CountDigits(int n)
+//{
+//    int count = 0;
+//    while (n != 0)
+//    {
+//        count++;
+//        n = n / 10;
+//    }
+//    return count;
+//}
+
+//Console.WriteLine(CountDigits(12370));
+
+//int ReverseNumber(int num)
+//{
+//    int reverseNum = 0;
+//    while (num != 0)
+//    {
+//        int n = num % 10;
+//        reverseNum = reverseNum * 10 + n;
+//        num = num / 10;
+//    }
+//    return reverseNum;
+//}
+
+//Console.WriteLine(ReverseNumber(12312));
+
+//bool CheckPalindrome(int num)
+//{
+//    int temp = num;
+//    int reverseNum = 0;
+
+//    while (temp != 0)
+//    {
+//        int n = temp % 10;
+//        reverseNum = reverseNum * 10 + n;
+//        temp = temp / 10;
+//    }
+
+//    if (reverseNum != num)
+//    {
+//        return false;
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(CheckPalindrome(321));
+
+//int  GCDOfNums(int num1,int num2)
+//{
+//    int gcd=0;
+//    int i = 1;
+//    while (i < num1)
+//    {
+//        if(num1%i==0 && num2 % i == 0)
+//        {
+//            gcd = i;
+//        }
+//        i++;
+//    }
+//    return gcd;
+//}
+
+//Console.WriteLine(GCDOfNums(20,15));
+
+//First and Last Position of element in sorted arrayintint
+
+//List<int> SearchRange(int target,int[] nums)
+//{
+//    int first = -1;
+//    int last = -1;
+//    for(int i=0;i<nums.Length; i++)
+//    {
+//        if(target == nums[i])
+//        {
+//            if(first == -1)
+//            {
+//                first = i;
+//            }
+//            last = i;
+//        }
+//    }
+//    return new List<int> { first,last};
+//}
+
+//List<int> arr=SearchRange(0, []);
+
+//foreach(int i in arr)
+//{
+//    Console.Write(i+" ");
+//}
+
+
+//Half the number, if the number is odd put the largest half on the right side of array and smalles into left
+//int[] HalfTheNumber(int num)
+//{
+//    int left = num / 2;
+//    int right = num - left;
+
+//    return new int[] { left, right };
+//}
+
+//int[] ans = HalfTheNumber(15);
+//foreach(int num in ans)
+//{
+//    Console.Write(num + " ");
+//}
+
+//Merge two sorted arrays
+
+void MergeTwoArrays(int[] nums1,int m,int[] nums2,int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        nums1[m + 1] = nums2[i];
+    }
+
+    for (int i = 0; i < nums1.Length; i++)
+    {
+        for (int j = 1; j < nums1.Length; j++)
+        {
+            if (nums1[i] > nums1[j])
+            {
+                int temp = nums1[i];
+                nums1[i] = nums1[j];
+                nums1[j] = temp;
+            }
+        }
+    }
+}
