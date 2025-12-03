@@ -466,23 +466,258 @@
 
 //Merge two sorted arrays
 
-void MergeTwoArrays(int[] nums1,int m,int[] nums2,int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        nums1[m + 1] = nums2[i];
-    }
+//void MergeTwoArrays(int[] nums1,int m,int[] nums2,int n)
+//{
+//    for (int i = 0; i < n; i++)
+//    {
+//        nums1[m + 1] = nums2[i];
+//    }
 
-    for (int i = 0; i < nums1.Length; i++)
+//    for (int i = 0; i < nums1.Length; i++)
+//    {
+//        for (int j = 1; j < nums1.Length; j++)
+//        {
+//            if (nums1[i] > nums1[j])
+//            {
+//                int temp = nums1[i];
+//                nums1[i] = nums1[j];
+//                nums1[j] = temp;
+//            }
+//        }
+//    }
+//}
+
+
+//Half the number, if the number is odd put the largest half on the right side of array and smalles into left
+//int[] HalfTheNumber(int num)
+//{
+//    int left = num / 2;
+//    int right = num - left;
+//    return new int[] { left, right };
+//}
+
+//int[] arr = HalfTheNumber(17);
+//foreach(int num in arr)
+//{
+//    Console.Write(num + " ");
+//}
+
+//void CountFrequenciesOfElements(int[] nums)
+//{
+//    Dictionary<int, int> hash = new Dictionary<int, int>();
+//    foreach(int num in nums)
+//    {
+//        if (hash.ContainsKey(num))
+//        {
+//            hash[num]++;
+//        }
+//        else
+//        {
+//            hash[num] = 1;
+//        }
+//    }
+
+//    int mostFreq = hash.Max(e => e.Value);
+//    int leastFreq = hash.Min(e => e.Value);
+
+//    var mostOccuringElemets = hash.Where(e => e.Value == mostFreq).
+//        Select(e => e.Key);
+//    var leastOccuringElements = hash.Where(e => e.Value == leastFreq).Select(e => e.Key);
+
+//    Console.WriteLine("Most Occuring Element " + string.Join(",",mostOccuringElemets));
+//    Console.WriteLine("Least Occuring Element " + string.Join(",", leastOccuringElements));
+//}
+
+//CountFrequenciesOfElements([1,4,3,1,2,6,1,2]);
+
+//bool ValidAnagram(string str1, string str2)
+//{
+//    Dictionary<char, int> sMap = new Dictionary<char, int>();
+//    Dictionary<char, int> pMap = new Dictionary<char, int>();
+
+//    foreach(char s in str1)
+//    {
+//        if (sMap.ContainsKey(s))
+//        {
+//            sMap[s]++;
+//        }
+//        else
+//        {
+//            sMap[s] = 1;
+//        }
+//    }
+
+//    foreach(char p in str2)
+//    {
+//        if (pMap.ContainsKey(p))
+//        {
+//            pMap[p]++;
+//        }
+//        else
+//        {
+//            pMap[p] = 1;
+//        }
+//    }
+
+//    //foreach(var e in sMap)
+//    //{
+//    //    Console.WriteLine(e.Key+" "+e.Value);
+//    //}
+//    foreach(var e in pMap)
+//    {
+//        if (!sMap.ContainsKey(e.Key) || sMap[e.Key]!= pMap[e.Key])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(ValidAnagram("jar","jam"));
+
+
+//int[] SelectionSort(int[] arr)
+//{
+//    for (int i = 0; i < arr.Length - 1; i++)
+//    {
+//        int minNum = i;
+//        for (int j = i + 1; j < arr.Length; j++)
+//        {
+//            if (arr[j] < arr[minNum])
+//            {
+//                minNum = j;
+//            }
+//        }
+//        int temp = arr[minNum];
+//        arr[minNum] = arr[i];
+//        arr[i] = temp;
+//    }
+//    return arr;
+//}
+
+//int[] ansNum = SelectionSort([8,3,5,2]);
+//foreach (int num in ansNum)
+//{
+//    Console.Write(num + " ");
+//}
+
+//int[] BubbleSort(int[] arr) 
+//{
+//    for(int i=0;i<arr.Length-1; i++)
+//    {
+//        for(int j = i + 1; j < arr.Length; j++)
+//        {
+//            if (arr[i] > arr[j])
+//            {
+//                int temp = arr[i];
+//                arr[i] = arr[j];
+//                arr[j] = temp;
+//            }
+//        }
+//    }
+//    return arr;
+//}
+
+//int[] ansArr = BubbleSort([3, 4, 2, 1]);
+//foreach(int num in ansArr)
+//{
+//    Console.Write(num+" ");
+//}
+
+//int[] InsertionSort(int[] arr)
+//{
+//    for(int i = 1; i < arr.Length; i++)
+//    {
+//        int j = i;
+//        while(j>0 && arr[j - 1] > arr[j])
+//        {
+//            int temp = arr[j];
+//            arr[j] = arr[j-1];
+//            arr[j - 1] = temp;
+
+//            j--;
+
+//        }
+//    }
+//    return arr;
+//}
+
+//int[] ansArr = InsertionSort([8, 3, 5, 1]);
+
+//foreach(int num in ansArr)
+//{
+//    Console.Write(num + " ");
+//}
+
+
+
+//int[] SelectionSort(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length-1; i++)
+//    {
+//        int minNum = i;
+//        for(int j=i+1;j<arr.Length;j++)
+//        {
+//            if (arr[i] > arr[j])
+//            {
+//                minNum = j;
+//            }
+//        }
+//        int temp = arr[i];
+//        arr[i] = arr[minNum];
+//        arr[minNum] = temp;
+//    }
+//    return arr;
+//}
+
+//int[] ansArr = SelectionSort([8,3,5,2]);
+//foreach(int num in ansArr)
+//{
+//    Console.Write(num+" ");
+//}
+
+//int[] BubbleSort(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        for(int j = i + 1; j < arr.Length; j++)
+//        {
+//            if (arr[i] > arr[j])
+//            {
+//                int temp = arr[i];
+//                arr[i] = arr[j];
+//                arr[j] = temp;
+//            }
+//        }
+//    }
+//    return arr;
+//}
+
+//int[] ansArr = BubbleSort([8, 3, 5, 2]);
+//foreach(int num in ansArr)
+//{
+//    Console.Write(num+" ");
+//}
+
+int[] InsertionSort(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
     {
-        for (int j = 1; j < nums1.Length; j++)
+        int j = i;
+        while (j > 0 && arr[j - 1] > arr[j])
         {
-            if (nums1[i] > nums1[j])
-            {
-                int temp = nums1[i];
-                nums1[i] = nums1[j];
-                nums1[j] = temp;
-            }
+            int temp = arr[j-1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+
+            j--;
         }
     }
+    return arr;
+}
+
+int[] ansArr = InsertionSort([8, 3, 5, 2]);
+foreach(int num in ansArr)
+{
+    Console.Write(num);
 }
