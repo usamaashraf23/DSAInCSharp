@@ -699,25 +699,118 @@
 //    Console.Write(num+" ");
 //}
 
-int[] InsertionSort(int[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-    {
-        int j = i;
-        while (j > 0 && arr[j - 1] > arr[j])
-        {
-            int temp = arr[j-1];
-            arr[j - 1] = arr[j];
-            arr[j] = temp;
+//int[] InsertionSort(int[] arr)
+//{
+//    for (int i = 0; i < arr.Length; i++)
+//    {
+//        int j = i;
+//        while (j > 0 && arr[j - 1] > arr[j])
+//        {
+//            int temp = arr[j-1];
+//            arr[j - 1] = arr[j];
+//            arr[j] = temp;
 
-            j--;
-        }
-    }
-    return arr;
-}
+//            j--;
+//        }
+//    }
+//    return arr;
+//}
 
-int[] ansArr = InsertionSort([8, 3, 5, 2]);
-foreach(int num in ansArr)
-{
-    Console.Write(num);
-}
+//int[] ansArr = InsertionSort([8, 3, 5, 2]);
+//foreach(int num in ansArr)
+//{
+//    Console.Write(num);
+//}
+
+//void MergeSort(int[] arr,int low,int high)
+//{
+//    if (low >= high)
+//    {
+//        return;
+//    }
+//    int mid = (low + high) / 2;
+//    MergeSort(arr, low, mid);
+//    MergeSort(arr, mid + 1, high);
+
+//}
+
+//int Merge(int[] arr, int low,int mid,int high)
+//{
+//    int[] result = new int[low + high];
+//    int left = low;
+//    int right = mid+1;
+
+//    while(left<=low && right <= high)
+//    {
+//        if (arr[left] < arr[right])
+//        {
+
+//        }
+//    }
+//}
+
+//int MaxElementInArray(int[] arr)
+//{
+//    int max = arr[0];
+//    for(int i = 1; i < arr.Length; i++)
+//    {
+//        if (arr[i] > max)
+//        {
+//            max = arr[i];
+//        }
+//    }
+//    return max;
+//}
+
+//Console.WriteLine(MaxElementInArray([10,1,2,3,4,5]));
+
+//int SecondLargestElement(int[] arr)
+//{
+//    int max = arr[0];
+//    int second = 0;
+//    for(int i = 1; i < arr.Length; i++)
+//    {
+//        if (arr[i] > max)
+//        {
+//            max = arr[i];
+//        }
+//    }
+//    for(int i = 1; i < arr.Length; i++)
+//    {
+//        if (arr[i]!=max && arr[i]<max)
+//        {
+//            second = arr[i];
+//        }
+//    }
+//    return second;
+//}
+
+//Console.WriteLine(SecondLargestElement([10, 1, 2, 3, 4, 5,6]));
+
+//bool IsSorted(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length-1; i++)
+//    {
+//        if (arr[i] > arr[i + 1])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(IsSorted([1,3,4]));
+
+//int[] RemoveDuplicates(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        for(int j = i + 1; j < arr.Length; j++)
+//        {
+//            if (arr[i] == arr[j])
+//            {
+//                arr.
+//            }
+//        }
+//    }
+//}
