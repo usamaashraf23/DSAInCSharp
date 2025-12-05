@@ -801,16 +801,72 @@
 
 //Console.WriteLine(IsSorted([1,3,4]));
 
-//int[] RemoveDuplicates(int[] arr)
+//List<int> RemoveDuplicates(int[] arr)
 //{
-//    for(int i = 0; i < arr.Length; i++)
+//    List<int> ans = new List<int>();
+
+//    for (int i = 0; i < arr.Length; i++)
 //    {
-//        for(int j = i + 1; j < arr.Length; j++)
+//        if (!ans.Contains(arr[i]))
 //        {
-//            if (arr[i] == arr[j])
-//            {
-//                arr.
-//            }
+//            ans.Add(arr[i]);
 //        }
 //    }
+//    return ans;
 //}
+
+//List<int> result = RemoveDuplicates([1,1,2,3,3,3]);
+
+//foreach(int num in result)
+//{
+//    Console.Write(num+" ");
+//}
+
+//int[] LeftRotateAnArray(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length+1; i++)
+//    {
+//        arr[i] = arr[i+1];
+//    }
+//    return arr;
+//}
+
+//int[] ans = LeftRotateAnArray([1, 2, 3, 4, 5]);
+//foreach(int i in ans)
+//{
+//    Console.Write(i + " ");
+//}
+
+
+Console.Write(3 % 7);
+
+void RotateLeft(int[] arr, int k)
+{
+    int n = arr.Length;
+    k = k % n;
+    int[] rotatedArray = Rotate(arr, 0, n - 1);
+    int[] rotateRight = Rotate(rotatedArray, 0, k-1);
+    int[] rotateLeft = Rotate(rotateRight, k, n - 1);
+    foreach (int i in rotateLeft)
+    {
+        Console.Write(i + " ");
+    }
+}
+
+int[] Rotate(int[] nums, int left, int right)
+{
+    while (left < right)
+    {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+
+        left++;
+        right--;
+    }
+    return nums;
+}
+
+
+int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+RotateLeft(nums, 3);
