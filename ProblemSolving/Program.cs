@@ -838,35 +838,86 @@
 //}
 
 
-Console.Write(3 % 7);
+//Console.Write(7 % 2);
 
-void RotateLeft(int[] arr, int k)
-{
-    int n = arr.Length;
-    k = k % n;
-    int[] rotatedArray = Rotate(arr, 0, n - 1);
-    int[] rotateRight = Rotate(rotatedArray, 0, k-1);
-    int[] rotateLeft = Rotate(rotateRight, k, n - 1);
-    foreach (int i in rotateLeft)
-    {
-        Console.Write(i + " ");
-    }
-}
+//void RotateLeft(int[] arr, int k)
+//{
+//    int n = arr.Length;
+//    k = k % n;
+//    int[] rotatedArray = Rotate(arr, 0, n - 1);
+//    int[] rotateRight = Rotate(rotatedArray, 0, k-1);
+//    int[] rotateLeft = Rotate(rotateRight, k, n - 1);
+//    foreach (int i in rotateLeft)
+//    {
+//        Console.Write(i + " ");
+//    }
+//}
 
-int[] Rotate(int[] nums, int left, int right)
-{
-    while (left < right)
-    {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
+//int[] Rotate(int[] nums, int left, int right)
+//{
+//    while (left < right)
+//    {
+//        int temp = nums[left];
+//        nums[left] = nums[right];
+//        nums[right] = temp;
 
-        left++;
-        right--;
-    }
-    return nums;
-}
+//        left++;
+//        right--;
+//    }
+//    return nums;
+//}
 
 
-int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
-RotateLeft(nums, 3);
+//int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+//RotateLeft(nums, 3);
+
+//int[] MoveZerosToEnd(int[] nums)
+//{
+//    int n = nums.Length - 1;
+//    int end = n;
+//    int start = 0;
+
+//    while (start <= end)
+//    {
+//        if (nums[start] == 0)
+//        {
+
+//            while (nums[end]==0 && start < end)
+//            {
+//                end--;
+//            }
+//            int temp = nums[end];
+//            nums[end] = nums[start];
+//            nums[start] = temp;
+
+
+//            end--;
+//        }
+
+//        start++;
+        
+//    }
+
+//    return nums;
+//}
+
+//int[] ans = MoveZerosToEnd([1,2,0,1,0,4,0]);
+//foreach(int num in ans)
+//{
+//    Console.Write(num + " ");
+//}
+
+//int LinearSearch(int[] nums,int num)
+//{
+//    int index = -1;
+//    for(int i = 0; i < nums.Length; i++)
+//    {
+//        if (nums[i] == num)
+//        {
+//            index = i;
+//        }
+//    }
+//    return index;
+//}
+
+//Console.WriteLine(LinearSearch([5,4,3,2,1], 5));
