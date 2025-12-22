@@ -895,7 +895,7 @@
 //        }
 
 //        start++;
-        
+
 //    }
 
 //    return nums;
@@ -907,10 +907,10 @@
 //    Console.Write(num + " ");
 //}
 
-//int LinearSearch(int[] nums,int num)
+//int LinearSearch(int[] nums, int num)
 //{
 //    int index = -1;
-//    for(int i = 0; i < nums.Length; i++)
+//    for (int i = 0; i < nums.Length; i++)
 //    {
 //        if (nums[i] == num)
 //        {
@@ -920,4 +920,350 @@
 //    return index;
 //}
 
-//Console.WriteLine(LinearSearch([5,4,3,2,1], 5));
+//Console.WriteLine(LinearSearch([5, 4, 3, 2, 1], 5));
+
+//void PrintNumberFrom1toN(int i,int num)
+//{
+//    if (i >num)
+//    {
+//        return;
+//    }
+//    Console.WriteLine(i);
+//    PrintNumberFrom1toN(i + 1, num);
+//}
+
+//PrintNumberFrom1toN(1, 5);
+
+//void PrintNumberFromNto1(int i ,int num)
+//{
+//    if (i > num)
+//    {
+//        return;
+//    }
+//    Console.WriteLine(num);
+//    PrintNumberFromNto1(i, num - 1);
+//}
+
+//PrintNumberFromNto1(1, 5);
+
+//void SumOfFirstNNumber(int i,int num,int sum)
+//{
+//    if (i > num)
+//    {
+//        Console.WriteLine(sum);
+//        return;
+//    }
+//    SumOfFirstNNumber(i + 1, num, sum + i);
+//}
+
+//SumOfFirstNNumber(0,5,0);
+
+//void FactorialOfNum(int i,int num,int fact)
+//{
+//    if (i > num)
+//    {
+//        Console.WriteLine(fact);
+//        return;
+//    }
+//    FactorialOfNum(i + 1, num, fact * i);
+//}
+//FactorialOfNum(1, 5, 1);
+
+//void ReverseArray(int i,int[] arr)
+//{
+//    int j = arr.Length - i - 1;
+//    if (i > j)
+//    {
+//        foreach(int n in arr)
+//        {
+//            Console.Write(n + " ");
+//        }
+//        return;
+//    }
+//    int temp = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = temp;
+//    ReverseArray(i + 1, arr);
+//}
+
+//ReverseArray(0, [1, 2, 3, 4, 5]);
+
+//void IsPalindrome(int i,string str)
+//{
+//    int j = str.Length - i - 1;
+//    if (i >= j)
+//    {
+//        Console.WriteLine("String is Palindrome");
+//        return;
+//    }
+//    if (str[i] != str[j])
+//    {
+//        Console.WriteLine("String is not Palindrome");
+//        return;
+//    }
+//    IsPalindrome(i+1, str);
+//}
+
+//IsPalindrome(0, "usama");
+
+//void PrintFabioncciSeries(int i, int num,int num1,int num2)
+//{
+//    if (i == 0)
+//    {
+//        Console.Write(num1 + " " + num2 + " ");
+//    }
+
+//    if (i == num)
+//    {
+//        return;
+//    }
+//    int nextNum = num1 + num2;
+//    Console.Write(nextNum + " ");
+//    PrintFabioncciSeries(i + 1, num, num2, num1 + num2);
+//}
+//PrintFabioncciSeries(0, 5, 0, 1);
+
+//void PrintFabioncciSeries(int a, int b, int count)
+//{
+//    if (count == 0)
+//    {
+//        return;
+//    }
+//    Console.Write(a + " ");
+//    PrintFabioncciSeries(b, a + b, count - 1);
+//}
+//PrintFabioncciSeries(0, 1, 5);
+
+//void CountFrequencies(int[] arr)
+//{
+//    Dictionary<int, int> hash = new Dictionary<int, int>();
+
+//    foreach(int i in arr)
+//    {
+//        if (hash.ContainsKey(i))
+//        {
+//            hash[i]++;
+//        }
+//        else
+//        {
+//            hash[i] = 1;
+//        }
+//    }
+
+//    foreach(var hashItem in hash)
+//    {
+//        Console.WriteLine(hashItem.Key+" Occurs " + hashItem.Value +" times.");
+//    }
+//}
+
+//CountFrequencies([1, 1, 2, 3, 1, 5]);
+
+//void HighestAndLowestFrequenciesElements(int[] arr)
+//{
+//    Dictionary<int, int> hash = new Dictionary<int, int>();
+
+//    foreach(int num in arr)
+//    {
+//        if (hash.ContainsKey(num))
+//        {
+//            hash[num]++;
+//        }
+//        else
+//        {
+//            hash[num] = 1;
+//        }
+//    }
+
+//    int mostFreq = hash.Max(e => e.Value);
+//    int leastFreq = hash.Min(e => e.Value);
+
+//    var mostOccuringElement = hash.Where(e => e.Value == mostFreq)
+//                               .Select(e => e.Key);
+
+//    var leastOccuringElement = hash.Where(e => e.Value == leastFreq).Select(e => e.Key);
+
+//    Console.WriteLine("Most Occuring Element in Array " + String.Join(",", mostOccuringElement));
+
+//    Console.WriteLine("Least Occuring Element in Array " + String.Join(",", leastOccuringElement));
+//}
+
+//bool IsValidAnagram(string s, string t)
+//{
+//    Dictionary<char, int> sMap = new Dictionary<char, int>();
+//    Dictionary<char, int> tMap = new Dictionary<char, int>();
+
+//    foreach(char c in s)
+//    {
+//        if (sMap.ContainsKey(c))
+//        {
+//            sMap[c]++;
+//        }
+//        else
+//        {
+//            sMap[c] = 1;
+//        }
+//    }
+
+//    foreach(char c in t)
+//    {
+//        if (tMap.ContainsKey(c))
+//        {
+//            tMap[c]++;
+//        }
+//        else
+//        {
+//            tMap[c] = 1;
+//        }
+//    }
+
+//    foreach(var i in tMap)
+//    {
+//        if (!sMap.ContainsKey(i.Key) || sMap[i.Key] != tMap[i.Key])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(IsValidAnagram("rat", "car"));
+
+//int[] FirstAndLastPositionOfElement(int[] nums,int n)
+//{
+//    int first = -1;
+//    int last = -1;
+
+//    for(int i=0;i<nums.Length;i++)
+//    {
+//        if (n == nums[i])
+//        {
+//            if (first == -1)
+//            {
+//                first = i;
+//            }
+//            last = i;
+//        }
+//    }
+//    return new int[] { first, last };
+//}
+
+//int[] ans = FirstAndLastPositionOfElement([],0);
+//foreach(int i in ans)
+//{
+//    Console.Write(i+" ");
+//}
+
+//int[] HalfTheNumber(int num)
+//{
+//    int left = num / 2;
+//    int right = num - left;
+
+//    return new int[] {left,right };
+//}
+
+//int[] ans = HalfTheNumber(11);
+//foreach(int i in ans)
+//{
+//    Console.Write(i + " ");
+//}
+
+//List<int> RemoveDuplicates(int[] nums)
+//{
+//    List<int> ans = new List<int>();
+
+//    for(int i = 0; i < nums.Length; i++)
+//    {
+//        if (!ans.Contains(nums[i]))
+//        {
+//            ans.Add(nums[i]);
+//        }
+//    }
+//    return ans;
+//}
+
+//List<int> ans = RemoveDuplicates([1,2,1,4,1]);
+
+//foreach(int i in ans)
+//{
+//    Console.Write(i + " ");
+//}
+
+//int[] RotateArray(int[] arr,int k)
+//{
+//    int l = arr.Length-1;
+//    int n = k % l;
+//    int[] reversedArray = ReverseArray(0,arr,l);
+//    int[] leftReverseArray = ReverseArray(0, reversedArray, n-1);
+//    int[] rightReverseArray = ReverseArray(n, leftReverseArray, l);
+//    return rightReverseArray;
+
+//}
+
+//int[] ReverseArray(int i,int[] nums, int n)
+//{
+//    int start = i;
+//    int end = n;
+//    while (start < end)
+//    {
+//        int temp = nums[start];
+//        nums[start] = nums[end];
+//        nums[end] = temp;
+
+//        start++;
+//        end--;
+//    }
+//    return nums;
+//}
+
+//int[] ans = RotateArray([1, 2, 3, 4, 5, 6, 7],3);
+//foreach(int i in ans)
+//{
+//    Console.Write(i + " ");
+//}
+
+//int[] MoveZerosToEnd(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length-1; i++)
+//    {
+//        if (arr[i]==0 && arr[i + 1] != 0)
+//        {
+//            int temp = arr[i];
+//            arr[i] = arr[i + 1];
+//            arr[i + 1] = temp;
+//        }
+//    }
+//    return arr;
+//}
+
+//int[] ans = MoveZerosToEnd([0,1,0,3,12]);
+//foreach(int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+int[] MoveZerosToEnd(int[] arr)
+{
+    int insertPos = 0;
+    for(int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] != 0)
+        {
+            arr[insertPos] = arr[i];
+            insertPos++;
+        }
+        
+    }
+
+    while (insertPos < arr.Length)
+    {
+        arr[insertPos] = 0;
+        insertPos++;
+    }
+    return arr;
+}
+
+int[] ans = MoveZerosToEnd([0]);
+foreach (int n in ans)
+{
+    Console.Write(n + " ");
+}
