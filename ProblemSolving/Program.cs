@@ -1241,29 +1241,202 @@
 //    Console.Write(n + " ");
 //}
 
-int[] MoveZerosToEnd(int[] arr)
-{
-    int insertPos = 0;
-    for(int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] != 0)
-        {
-            arr[insertPos] = arr[i];
-            insertPos++;
-        }
-        
-    }
+//int[] MoveZerosToEnd(int[] arr)
+//{
+//    int insertPos = 0;
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        if (arr[i] != 0)
+//        {
+//            arr[insertPos] = arr[i];
+//            insertPos++;
+//        }
 
-    while (insertPos < arr.Length)
+//    }
+
+//    while (insertPos < arr.Length)
+//    {
+//        arr[insertPos] = 0;
+//        insertPos++;
+//    }
+//    return arr;
+//}
+
+//int[] ans = MoveZerosToEnd([0]);
+//foreach (int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+//List<int> UnionOfArrays(int[] arr1, int[] arr2)
+//{
+//    Dictionary<int, int> freq = new Dictionary<int, int>();
+//    List<int> union = new List<int>();
+//    foreach( int num in arr1)
+//    {
+//        if (freq.ContainsKey(num))
+//        {
+//            freq[num]++;
+//        }
+//        else
+//        {
+//            freq[num] = 1;
+//        }
+//    }
+
+//    foreach(int num in arr2)
+//    {
+//        if (freq.ContainsKey(num))
+//        {
+//            freq[num]++;
+//        }
+//        else
+//        {
+//            freq[num] = 1;
+//        }
+//    }
+//    foreach(var f in freq)
+//    {
+//        union.Add(f.Key);
+//    }
+
+//    return union;
+//}
+
+//List<int> ans = UnionOfArrays([1, 2, 3, 4, 5], [2, 3, 4, 4, 5]);
+//foreach(int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+//int FindMissingNumber(int[] arr)
+//{
+//    int n = arr.Length;
+//    int s1 = (n * (n + 1)) / 2;
+//    int s2 = 0;
+//    for(int i = 0; i < arr.Length-1; i++)
+//    {
+//        s2 += arr[i];
+//    }
+//    return s1-s2;
+//}
+
+//Console.WriteLine(FindMissingNumber([1, 2, 4, 5]));
+
+//List<int> ProductExceptItself(int[] arr)
+//{
+//    List<int> productArray = new List<int>();
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        int product = 1;
+//        for(int j = 0; j < arr.Length; j++)
+//        {
+//            if (i != j)
+//            {
+//                product *= arr[j];
+//            }
+//        }
+//        productArray.Add(product);
+//    }
+//    return productArray;
+//}
+
+//List<int> ans = ProductExceptItself([-1, 0, 1, 2, 3]);
+//foreach(int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+//List<int> TopKFrequent(int[] arr, int k)
+//{
+//    Dictionary<int, int> freq = new Dictionary<int, int>();
+//    foreach(int n in arr)
+//    {
+//        if (freq.ContainsKey(n))
+//        {
+//            freq[n]++;
+//        }
+//        else
+//        {
+//            freq[n] = 1;
+//        }
+//    }
+    
+
+//    return freq
+//        .OrderByDescending(x => x.Value)
+//        .Take(k)
+//        .Select(x => x.Key)
+//        .ToList(); ;
+//}
+
+//List<int> ans = TopKFrequent([7,7],1);
+//foreach(int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+string Encode(string[] strs)
+{
+    string str = "";
+    for(int i = 0; i < strs.Length; i++)
     {
-        arr[insertPos] = 0;
-        insertPos++;
+        str += strs[i].Length + "#" + strs[i];
     }
-    return arr;
+    return str;
 }
 
-int[] ans = MoveZerosToEnd([0]);
-foreach (int n in ans)
+//List<string> Decode(string str)
+//{
+//    int i = 0;
+//    List<string> ansStr = new List<string>();
+//    while (i < str.Length)
+//    {
+//        int j = i;
+//        while (str[j] != '#')
+//        {
+//            j++;
+//        }
+//        ansStr.Add(str[i, j]);
+//        i = j + 1;
+//    }
+//    return ansStr;
+//}
+
+List<string> Decode(string[] strs)
 {
-    Console.Write(n + " ");
+    string str = Encode(strs);
+    Console.WriteLine(str);
+    List<string> result = new List<string>();
+    int i = 0;
+
+    while (i < str.Length)
+    {
+        int j = i;
+
+        while (str[j] != '#')
+        {
+            j++;
+        }
+        Console.WriteLine(i + " " + j);
+        int length = int.Parse(str.Substring(i, j - i));
+        Console.WriteLine(length);
+        j++;
+
+        string word = str.Substring(j, length);
+        Console.WriteLine(word);
+        result.Add(word);
+
+        i = j + length;
+    }
+
+    return result;
+}
+
+//Console.WriteLine(Decode(["neet", "code", "love", "you"]));
+
+List<string> ans = Decode(["neet", "code", "love", "you"]);
+foreach (string str in ans)
+{
+    Console.Write(str + " ");
 }
