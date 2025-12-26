@@ -1361,7 +1361,7 @@
 //            freq[n] = 1;
 //        }
 //    }
-    
+
 
 //    return freq
 //        .OrderByDescending(x => x.Value)
@@ -1376,15 +1376,15 @@
 //    Console.Write(n + " ");
 //}
 
-string Encode(string[] strs)
-{
-    string str = "";
-    for(int i = 0; i < strs.Length; i++)
-    {
-        str += strs[i].Length + "#" + strs[i];
-    }
-    return str;
-}
+//string Encode(string[] strs)
+//{
+//    string str = "";
+//    for(int i = 0; i < strs.Length; i++)
+//    {
+//        str += strs[i].Length + "#" + strs[i];
+//    }
+//    return str;
+//}
 
 //List<string> Decode(string str)
 //{
@@ -1403,40 +1403,301 @@ string Encode(string[] strs)
 //    return ansStr;
 //}
 
-List<string> Decode(string[] strs)
-{
-    string str = Encode(strs);
-    Console.WriteLine(str);
-    List<string> result = new List<string>();
-    int i = 0;
+//List<string> Decode(string[] strs)
+//{
+//    string str = Encode(strs);
+//    Console.WriteLine(str);
+//    List<string> result = new List<string>();
+//    int i = 0;
 
-    while (i < str.Length)
+//    while (i < str.Length)
+//    {
+//        int j = i;
+
+//        while (str[j] != '#')
+//        {
+//            j++;
+//        }
+//        Console.WriteLine(i + " " + j);
+//        int length = int.Parse(str.Substring(i, j - i));
+//        Console.WriteLine(length);
+//        j++;
+
+//        string word = str.Substring(j, length);
+//        Console.WriteLine(word);
+//        result.Add(word);
+
+//        i = j + length;
+//    }
+
+//    return result;
+//}
+
+////Console.WriteLine(Decode(["neet", "code", "love", "you"]));
+
+//List<string> ans = Decode(["neet", "code", "love", "you"]);
+//foreach (string str in ans)
+//{
+//    Console.Write(str + " ");
+//}
+
+//int LongestConsecutive(int[] nums)
+//{
+//    int count = 0;
+//    for(int i = 0; i < nums.Length; i++)
+//    {
+//        if (nums.Contains(i))
+//        {
+//            count++;
+//        }
+//    }
+//    return count;
+//}
+
+//Console.WriteLine(LongestConsecutive([1,0,1,2]));
+
+//[0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+
+//int LongestConsecutive(int[] nums)
+//{
+//    HashSet<int> hash = new HashSet<int>(nums);
+//    int longest = 0;
+
+//    foreach(int n in nums)
+//    {
+//        if (!hash.Contains(n - 1))
+//        {
+//            int curr = n;
+//            int length = 1;
+
+//            while (hash.Contains(curr + 1))
+//            {
+//                curr++;
+//                length++;
+//            }
+//            longest = Math.Max(longest, length);
+//        }
+
+//    }
+//    return longest;
+//}
+
+//Console.WriteLine(LongestConsecutive([0, 3, 2, 5, 4, 6, 1, 1]));
+
+//string Encode(string[] strs)
+//{
+//    string str = "";
+
+//    for(int i = 0; i < strs.Length; i++)
+//    {
+//        str += strs[i].Length + "#" + strs[i];
+//    }
+//    return str;
+//}
+
+//Console.WriteLine(Encode(["neet", "code", "love", "you"]));
+
+
+//List<string> Decode(string str)
+//{
+//    List<string> strs = new List<string>();
+
+//    int i = 0;
+//    while (i < str.Length)
+//    {
+//        int j = i;
+//        while (str[j] != '#')
+//        {
+//            j++;
+//        }
+//        int length = int.Parse(str.Substring(i, j-i));
+//        j++;
+//        string word = str.Substring(j, length);
+//        strs.Add(word);
+//        i = j + length;
+//    }
+//    return strs;
+//}
+//string str = Encode(["neet", "code", "love", "you"]);
+
+//List<string> ansStrs = Decode(str);
+//foreach(string s in ansStrs)
+//{
+//    Console.Write(s+" ");
+//}
+
+//List<List<string>> GroupAnagrams(string[] strs)
+//{
+//    Dictionary<string,List<string>> hash= new Dictionary<string, List<string>>();
+//    foreach(var s in strs)
+//    {
+//        char[] str = s.ToCharArray();
+//        Array.Sort(str);
+//        string word = new string(str);
+//        if (!hash.ContainsKey(word))
+//        {
+//            hash[word] = new List<string>();
+//        }
+
+//        hash[word].Add(s);
+
+//    }
+//    return hash.Values.ToList();
+
+//}
+
+//List<List<string>> ansStrs = GroupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]);
+
+//foreach(var s in ansStrs)
+//{
+//    foreach(var str in s)
+//    {
+//        Console.Write(str+" ");
+//    }
+//    Console.WriteLine();
+//}
+
+//List<int> TopKFrequentElement(int[] nums,int k)
+//{
+//    Dictionary<int, int> hash = new Dictionary<int, int>();
+
+//    foreach(int n in nums)
+//    {
+//        if (hash.ContainsKey(n))
+//        {
+//            hash[n]++;
+//        }
+//        else
+//        {
+//            hash[n] = 1;
+//        }
+//    }
+
+//    return hash.OrderByDescending(x => x.Value).Take(k).Select(x => x.Key).ToList();
+
+//}
+
+//List<int> ansList = TopKFrequentElement([7, 7], 1);
+//foreach(int n in ansList)
+//{
+//    Console.Write(n + " ");
+//}
+
+string Encode(string[] strs)
+{
+    string str = "";
+    foreach(string s in strs)
     {
-        int j = i;
-
-        while (str[j] != '#')
-        {
-            j++;
-        }
-        Console.WriteLine(i + " " + j);
-        int length = int.Parse(str.Substring(i, j - i));
-        Console.WriteLine(length);
-        j++;
-
-        string word = str.Substring(j, length);
-        Console.WriteLine(word);
-        result.Add(word);
-
-        i = j + length;
+        str += s.Length + "#" + s;
     }
-
-    return result;
+    return str;
 }
 
-//Console.WriteLine(Decode(["neet", "code", "love", "you"]));
+//List<string> Decode(string[] strArr)
+//{
+//    string str = Encode(strArr);
+//    List<string> strs = new List<string>();
+//    int i = 0;
+//    int longest = 0;
 
-List<string> ans = Decode(["neet", "code", "love", "you"]);
-foreach (string str in ans)
-{
-    Console.Write(str + " ");
-}
+//    while (i < str.Length)
+//    {
+//        int j = i;
+//        int length = 0;
+//        while (str[j] != '#')
+//        {
+//            j++;
+//        }
+//        length = int.Parse(str.Substring(i, j - i));
+//        j++;
+//        string word = str.Substring(j, length);
+//        strs.Add(word);
+//        i = length + j;
+//    }
+//    return strs;
+//}
+
+//List<string> ansList = Decode(["neet", "code", "love", "you"]);
+//foreach(string s in ansList)
+//{
+//    Console.Write(s + " ");
+//}
+
+//int[] ProductOfArray(int[] nums)
+//{
+//    int[] ans = new int[nums.Length];
+//    for(int i = 0; i < nums.Length; i++)
+//    {
+//        int product = 1;
+//        for(int j = 0; j < nums.Length; j++)
+//        {
+//            if (i != j)
+//            {
+//                product *= nums[j];
+//            }
+//        }
+//        ans[i] = product;
+//    }
+//    return ans;
+//}
+//int[] ansArr = ProductOfArray([-1, 0, 1, 2, 3]);
+//foreach(int n in ansArr)
+//{
+//    Console.Write(n + " ");
+//}
+
+
+//int LongestConsecutive(int[] nums)
+//{
+//    HashSet<int> hash = new HashSet<int>(nums);
+//    int longest = 0;
+//    foreach(int n in nums)
+//    {
+
+//        if (!hash.Contains(n - 1))
+//        {
+//            int j = n;
+//            int length = 1;
+//            while (hash.Contains(j + 1))
+//            {
+//                j++;
+//                length++;
+//            }
+//            longest = Math.Max(longest, length);
+//        }
+//    }
+//    return longest;
+//}
+
+//Console.WriteLine(LongestConsecutive([0, 3, 2, 5, 4, 6, 1, 1]));
+
+//int[] TwoSum(int[] nums,int target)
+//{
+//    int[] ans = new int[2];
+//    int i = 0;
+//    int j = nums.Length - 1;
+//    while (i < j)
+//    {
+//        if (nums[i] + nums[j] == target)
+//        {
+//            ans[0] = i+1;
+//            ans[1] = j+1;
+//            break;
+//        }
+//        else if (nums[i] < nums[j])
+//        {
+//            j--;
+//        }
+//        else
+//        {
+//            i++;
+//        }
+//    }
+//    return ans;
+//}
+
+//int[] ans = TwoSum([-1, 0], -1);
+//foreach(int i in ans)
+//{
+//    Console.Write(i + " ");
+//}
