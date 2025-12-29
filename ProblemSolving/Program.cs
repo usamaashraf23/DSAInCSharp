@@ -1701,3 +1701,35 @@ string Encode(string[] strs)
 //{
 //    Console.Write(i + " ");
 //}
+
+
+int MaxArea(int[] heights)
+{
+    int maxArea = 0;
+    int left = 0;
+    int right = heights.Length-1;
+
+    while (left < right)
+    {
+        int width = right -left;
+        int height = Math.Min(heights[right], heights[left]);
+        int area = width * height;
+        if (area > maxArea)
+        {
+            maxArea = area;
+        }
+        if (heights[left] < heights[right])
+        {
+            left++;
+        }
+        else
+        {
+            right--;
+        }
+        
+    }
+    return maxArea;
+    
+}
+
+Console.WriteLine(MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
