@@ -1583,15 +1583,15 @@
 //    Console.Write(n + " ");
 //}
 
-string Encode(string[] strs)
-{
-    string str = "";
-    foreach(string s in strs)
-    {
-        str += s.Length + "#" + s;
-    }
-    return str;
-}
+//string Encode(string[] strs)
+//{
+//    string str = "";
+//    foreach(string s in strs)
+//    {
+//        str += s.Length + "#" + s;
+//    }
+//    return str;
+//}
 
 //List<string> Decode(string[] strArr)
 //{
@@ -1703,33 +1703,249 @@ string Encode(string[] strs)
 //}
 
 
-int MaxArea(int[] heights)
-{
-    int maxArea = 0;
-    int left = 0;
-    int right = heights.Length-1;
+//int MaxArea(int[] heights)
+//{
+//    int maxArea = 0;
+//    int left = 0;
+//    int right = heights.Length-1;
 
-    while (left < right)
+//    while (left < right)
+//    {
+//        int width = right - left;
+//        int height = Math.Min(heights[right], heights[left]);
+//        int area = width * height;
+//        if (area > maxArea)
+//        {
+//            maxArea = area;
+//        }
+//        if (heights[left] < heights[right])
+//        {
+//            left++;
+//        }
+//        else
+//        {
+//            right--;
+//        }
+
+//    }
+//    return maxArea;
+
+//}
+
+//Console.WriteLine(MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+//List<int> TopKElements(int[] nums,int k)
+//{
+//    Dictionary<int, int> hash = new Dictionary<int, int>();
+
+//    foreach(int n in nums)
+//    {
+//        if (hash.ContainsKey(n))
+//        {
+//            hash[n]++;
+//        }
+//        else
+//        {
+//            hash[n] = 1;
+//        }
+//    }
+
+//    return hash.OrderByDescending(x => x.Value).Take(k).Select(x => x.Key).ToList();
+//}
+
+//List<int> ans = TopKElements([7, 7], 1);
+//foreach(int n in ans)
+//{
+//    Console.Write(n + " ");
+//}
+
+//int LongestConsecutive(int[] nums)
+//{
+//    HashSet<int> hash = new HashSet<int>(nums);
+//    int longest = 0;
+
+//    foreach(int n in nums)
+//    {
+//        if (!hash.Contains(n - 1))
+//        {
+//            int num = n;
+//            int length = 1;
+//            while (hash.Contains(num + 1))
+//            {
+//                num++;
+//                length++;
+//            }
+//            longest = Math.Max(longest, length);
+//        }
+
+//    }
+//    return longest;
+//}
+
+//Console.WriteLine(LongestConsecutive([2, 20, 4, 10, 3, 4, 5]));
+
+//string Encode(string[] arr)
+//{
+//    string str = "";
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        str += arr[i].Length + "#" + arr[i];
+//    }
+//    return str;
+//}
+
+//List<string> Decode(string[] strs)
+//{
+//    List<string> ansStr = new List<string>();
+//    string str = Encode(strs);
+//    int i = 0;
+//    while (i < str.Length)
+//    {
+//        int j = i;
+//        if (str[j] != '#')
+//        {
+//            j++;
+//        }
+//        int length = int.Parse(str.Substring(i, j - 1));
+//        j++;
+//        string word = str.Substring(j,length);
+//        ansStr.Add(word);
+//        i += length;
+//    }
+//    return ansStr;
+//}
+
+//List<string> sts = Decode(["Hello", "World"]);
+
+//foreach(var s in sts)
+//{
+//    Console.Write(s + " ");
+//}
+//Console.WriteLine(Encode(["Hello", "World"]));
+
+//5#Hello5#World
+
+
+//using ProblemSolving;
+
+//LinkedList list1 = new LinkedList();
+//list1.Add(14);
+//list1.Add(12);
+//list1.Add(13);
+
+//list1.Print();
+
+//list1.InsertAt(15, 1);
+//list1.Print();
+
+//list1.ReverseLinkedList();
+
+//list1.Print();
+
+//bool IsValid(string s)
+//{
+//    Stack<char> stack = new Stack<char>();
+//    foreach (char c in s)
+//    {
+//        if(c=='(' || c=='{' || c == '[')
+//        {
+//            stack.Push(c);
+//        }
+//        else
+//        {
+//            if (stack.Count() == 0)
+//            {
+//                return false;
+//            }
+
+//            char top = stack.Pop();
+//            if(c==')' && top != '(')
+//            {
+//                return false;
+//            }
+//            if(c=='}' && top != '{')
+//            {
+//                return false;
+//            }
+//            if(c==']' && top != '[')
+//            {
+//                return false;
+//            }
+//        }
+//    }
+//    return stack.Count == 0;
+//}
+
+//Console.WriteLine(IsValid("({[]})"));
+
+//int LargestElementInArray(int[] arr)
+//{
+//    int max = 0;
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        if (arr[i] > max)
+//        {
+//            max = arr[i];
+//        }
+//    }
+//    return max;
+//}
+//Console.WriteLine(LargestElementInArray([4, 11, 3]));
+
+//int SecondLargestElement(int[] arr)
+//{
+//    int largest = 0;
+//    int secondLargest = 0;
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        if (arr[i] > largest)
+//        {
+//            largest = arr[i];
+//        }
+//    }
+
+//    for(int i = 0; i < arr.Length; i++)
+//    {
+//        if (arr[i]!=largest && arr[i] > secondLargest)
+//        {
+//            secondLargest = arr[i];
+//        }
+//    }
+//    return secondLargest;
+//}
+
+//Console.WriteLine(SecondLargestElement([1, 2, 3, 4, 5]));
+
+//bool ArrayIsSorted(int[] arr)
+//{
+//    for(int i = 0; i < arr.Length-1; i++)
+//    {
+//        if (arr[i] > arr[i + 1])
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+
+//}
+
+//Console.WriteLine(ArrayIsSorted([1, 4, 3, 4, 5, 6]));
+
+List<int> RemoveDuplicates(int[] arr)
+{
+    List<int> ansArr = new List<int>();
+    for(int i = 0; i < arr.Length; i++)
     {
-        int width = right -left;
-        int height = Math.Min(heights[right], heights[left]);
-        int area = width * height;
-        if (area > maxArea)
+        if (!ansArr.Contains(arr[i]))
         {
-            maxArea = area;
+            ansArr.Add(arr[i]);
         }
-        if (heights[left] < heights[right])
-        {
-            left++;
-        }
-        else
-        {
-            right--;
-        }
-        
     }
-    return maxArea;
-    
+    return ansArr;
 }
 
-Console.WriteLine(MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+List<int> list = RemoveDuplicates([1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4]);
+foreach(int i in list)
+{
+    Console.Write(i + " ");
+}
